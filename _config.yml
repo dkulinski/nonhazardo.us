@@ -1,0 +1,20 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: Dan's Own Place On The Internet
+email: daniel@kulinski.net
+description: > # this means to ignore newlines until "baseurl:"
+  This blog is a site where I dump tidbits of knowledge.  Most of it
+  will be based around Linux or 3D Printing, my two current passions.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://nonhazardo.us" # the base hostname & protocol for your site
+twitter_username: dkulinski
+github_username:  dkulinski
+
+# Build settings
+markdown: kramdown
