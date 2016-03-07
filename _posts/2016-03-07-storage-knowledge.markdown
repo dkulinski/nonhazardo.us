@@ -61,11 +61,13 @@ does.
 ##Linux File Systems
 Linux supports several file systems.  These include ext4, XFS, ZFS and BTRFS.  Each represent and handle data
 differently.  
+
 ###ext4
 ext4 is the Extended File System version 4.  It has many features to improve performance and integrity.  Journaling
 offers the ability to quickly recover from an unexpected power outage and leave the file system in tact.  Extents
 allows planning and laying down correlated data (data in the same file) in the same proximity to boost sequestial
 performance.
+
 ###XFS
 XFS is the file system used by IRIX and ported to Linux.  It has many features to improve performance and integrity.  Journaling
 offers the ability to quickly recover from an unexpected power outage and leave the file system in tact.  Extents
