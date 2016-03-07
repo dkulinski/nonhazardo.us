@@ -73,3 +73,23 @@ XFS is the file system used by IRIX and ported to Linux.  It has many features t
 offers the ability to quickly recover from an unexpected power outage and leave the file system in tact.  Extents
 allows planning and laying down correlated data (data in the same file) in the same proximity to boost sequestial
 performance.  XFS is also 64 bit allowing a maximum size of 8 exabytes for a single volume.
+
+###ZFS/BTRFS
+ZFS and BTRFS are two new file systems which incorporate volume management as well.  ZFS was pioneered by Sun 
+Microsystems while BTRFS is an effort from Oracle.  These two are lumped together because they share many 
+similarities.  Both are Copy-on-Write (COW) file systems where new data for existing files is copied and 
+written into a new area.  The file systems use a B-Tree, or in the case of ZFS B-Tree-like, structure
+for metadata.  Both include checksums for the data on disk that is rechecked at time of read and recalculated on writes.
+Checksums allow for end to end data security and can expose hardware problems such as faulty RAM, bad disks and even
+bad cables.  Due to the structure of the metadata and COW this allows for snapshots without overhead and the ability
+to send and receive snapshots as a block stream for easy migration or redundant copies of data and only sends the 
+changed blocks.  ZFS has some advanced caching features such as the ZFS Intent Log (ZIL) which records data operations
+before they are committed to disk and the Level 2 Adjustable Replacement Cache which is where hot files are kept in
+for a read cache. Because ZFS also manages volumes separate classes of disks can be assigned to the storage pool,
+the ZIL and the L2ARC to allow for performance tuning.  Both ZFS and BTRFS offer "RAID" levels comparable to 
+RAID 5 and RAID 6.  ZFS further allows triple redundancy RAID.  Avoiding a hardware controller allows for certain 
+performance enhancements over a hardware RAID5/6, mainly skipping the "write hole".  The write hole is a term used
+to describe the performance penalty when writing data that is less than the full stripe size of the RAID controller.  
+If the stripe size is 1MB and only 4kb is written the hardware RAID controller will still need to write 1MB of data.  
+ZFS avoids the write hole by using variable sized stripes down to the block level of the disk drives.  ZFS also offers 
+data deduplication, which is very RAM intensive, and both ZFS and BTRFS allow compression.  
