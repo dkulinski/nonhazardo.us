@@ -17,4 +17,10 @@ twitter_username: dkulinski
 github_username:  dkulinski
 
 # Build settings
-markdown: kramdown
+markdown: redcarpet
+
+redcarpet:
+   extension:
+     - fenced_code_blocks
+ 
+highlighter: pygments
