@@ -59,7 +59,8 @@ metadata local to the OSS.  This reduces a potential bottleneck of performance i
 does.  
 
 ##Linux File Systems
-Linux supports several file systems.  These include ext4, XFS, ZFS and BTRFS.  Each represent and handle data
+Linux supports several file systems.  These include ext4, XFS, ZFS and BTRFS. Linux also includes the Logical
+Volume Manager (lvm) and the Multi-device interface (md).
 differently.  
 
 ###ext4
@@ -93,3 +94,13 @@ to describe the performance penalty when writing data that is less than the full
 If the stripe size is 1MB and only 4kb is written the hardware RAID controller will still need to write 1MB of data.  
 ZFS avoids the write hole by using variable sized stripes down to the block level of the disk drives.  ZFS also offers 
 data deduplication, which is very RAM intensive, and both ZFS and BTRFS allow compression.  
+
+###Logical Volume Manager and Multi-device Interfaces
+Logical Volume Manager (lvm) and Multi-device interfaces (md) allow the management of logical volumes that
+are parts of the disk up to multiple disks.  LVM has largely superceded md on modern Linux.  md allows 
+combining multiple disks or multiple partitions into a single block device.  It supports RAID levels 0, 1, 5 and 6 and
+combinations (IE RAID 10, 50, 60) of these.  LVM supports all the RAID levels that md supports and also supports
+concatenated volumes.  LVM also supports snapshots through the use of bitmaps.  These bitmaps will track changes to data,
+write new and/or changed data to a new area on disk and point to the location of the new data vs the old data.  Because
+this method must track in such a manner these snapshots cause overhead when in use.  More snapshots cause more 
+overhead.  
