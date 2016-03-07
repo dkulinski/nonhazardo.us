@@ -6,6 +6,7 @@ categories: storage linux file-system
 ---
 ##Overview
 This is an article to get the information from my head on to a written form.  I will briefly explain some topics below.
+
 ##Storage
 Today there are four types of storage:
 
@@ -104,3 +105,11 @@ concatenated volumes.  LVM also supports snapshots through the use of bitmaps.  
 write new and/or changed data to a new area on disk and point to the location of the new data vs the old data.  Because
 this method must track in such a manner these snapshots cause overhead when in use.  More snapshots cause more 
 overhead.  
+
+##What is an inode
+This question comes up a lot.  A file system has a certain amount of inodes.  An inode is used to store information about
+a file.  The meta-data contained, on Linux, will be the size of the file, access time, create time, last modified time and
+which blocks contain the actual data.  It will also contain access attributes and store extended attributes.  Extended 
+attributes allow for more fine grained permissions and the Lustre file system uses them to track the object IDs of
+files in the MDS.  A file system has a limited number of inodes and this can be tuned for the number of files expected
+on a file system.  If there are only large files fewer inodes are needed, lots of small files require more inodes.
