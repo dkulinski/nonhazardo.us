@@ -58,3 +58,16 @@ follow this hierarchy.  Gluster uses hashing from the client to facilitate the s
 metadata local to the OSS.  This reduces a potential bottleneck of performance in theory but in reality it rarely
 does.  
 
+##Linux File Systems
+Linux supports several file systems.  These include ext4, XFS, ZFS and BTRFS.  Each represent and handle data
+differently.  
+###ext4
+ext4 is the Extended File System version 4.  It has many features to improve performance and integrity.  Journaling
+offers the ability to quickly recover from an unexpected power outage and leave the file system in tact.  Extents
+allows planning and laying down correlated data (data in the same file) in the same proximity to boost sequestial
+performance.
+###XFS
+XFS is the file system used by IRIX and ported to Linux.  It has many features to improve performance and integrity.  Journaling
+offers the ability to quickly recover from an unexpected power outage and leave the file system in tact.  Extents
+allows planning and laying down correlated data (data in the same file) in the same proximity to boost sequestial
+performance.  XFS is also 64 bit allowing a maximum size of 8 exabytes for a single volume.
