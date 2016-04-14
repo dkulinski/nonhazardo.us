@@ -100,7 +100,6 @@ Add the following to /etc/rc.local to copy the console from the current location
 ```
 conmapfb 1 1
 ```
-
 An X session can be started on the screen by modifying /dev/fb0 in /usr/share/X11/xorg.conf.d/99-fbturbo.conf to /dev/fb1.
 
 Reboot and enjoy your screen!
