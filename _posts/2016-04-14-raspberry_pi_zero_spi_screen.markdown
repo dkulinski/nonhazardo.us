@@ -8,7 +8,7 @@ categories: raspberry pi tft spi device tree
 I recently acquired a Raspberry Pi Zero and a cheap 2.2 inch TFT LCD from Aliexpress.  The TFT is driven by a Ilitek ILI9341 chip in SPI mode.  SPI requires 4 wires for data transfer and the TFT requires a few extra connections for control. This should work on any Raspberry Pi with a 40 pin header (B+, 2 B, 3 B and Zero). This may also work on the original A and B but I have not tested this.
 
 ##Connecting the LCD to the Raspberry Pi
-http://elinux.org has a great piece of documentation on the GPIO pins and their assignments.  Please reference it [here][http://elinux.org/RPi\_Low-level\_peripherals].
+http://elinux.org has a great piece of documentation on the GPIO pins and their assignments.  Please reference it [here](http://elinux.org/RPi\_Low-level\_peripherals).
 
 Connect all the SPI pins on the TFT to the corresponding pins on the Raspberry Pi.  Connect reset to GPIO 24, dc to GPIO 23 and LED to GPIO 24. Connect Vcc to a 3.3V pin and Gnd to a ground pin. 
 
