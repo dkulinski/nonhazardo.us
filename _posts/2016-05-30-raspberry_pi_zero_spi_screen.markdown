@@ -79,6 +79,13 @@ Once the compile is installed, create a file called tft22.dts and paste in the f
 };
 ```
 
+**UPDATE 6/4/2016**
+If you are using a recent version of Raspbian you will need to use the following command:
+
+```bash
+dtc -@ -O dtb -I dts -i tft22.dts -o tft22.dtbo
+```
+
 Compile with the following command:
 
 ```bash
