@@ -10,7 +10,7 @@ I recently acquired a Raspberry Pi Zero and a cheap 2.2 inch TFT LCD from Aliexp
 ##Connecting the LCD to the Raspberry Pi
 http://elinux.org has a great piece of documentation on the GPIO pins and their assignments.  Please reference it [here](http://elinux.org/RPi\_Low-level\_peripherals).
 
-Connect all the SPI pins on the TFT to the corresponding pins on the Raspberry Pi.  Connect reset to GPIO 24, dc to GPIO 23 and LED to GPIO 24. Connect Vcc to a 3.3V pin and Gnd to a ground pin. 
+Connect all the SPI pins on the TFT to the corresponding pins on the Raspberry Pi.  Connect reset to GPIO 23, dc to GPIO 25 and LED to GPIO 24. Connect Vcc to a 3.3V pin and Gnd to a ground pin. 
 
 ##Device tree compiler
 In order to enable the screen you will need to install the following device tree file.  In order for the file to work the device tree compiler is needed.  It can be installed with:
