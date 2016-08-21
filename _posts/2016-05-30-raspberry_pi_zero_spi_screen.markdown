@@ -10,6 +10,9 @@ I recently acquired a Raspberry Pi Zero and a cheap 2.2 inch TFT LCD from Aliexp
 ##Connecting the LCD to the Raspberry Pi
 http://elinux.org has a great piece of documentation on the GPIO pins and their assignments.  Please reference it [here](http://elinux.org/RPi\_Low-level\_peripherals).
 
+**UPDATE 08/21/16**
+I mistakenly listed connecting the LED directly to a GPIO pin.  This will draw too much current and can potentially damage a Raspberry Pi board. There are two ways to overcome this flaw, either put a transistor in place with a connect to the 3.3v rail or just connect it directly to the 3.3v rail with an appropriate sized current limiting resistor.  
+ 
 Connect all the SPI pins on the TFT to the corresponding pins on the Raspberry Pi.  Connect reset to GPIO 23, dc to GPIO 25 and LED to GPIO 24. Connect Vcc to a 3.3V pin and Gnd to a ground pin. 
 
 ##Device tree compiler
@@ -83,7 +86,7 @@ Once the compile is installed, create a file called tft22.dts and paste in the f
 If you are using a recent version of Raspbian you will need to use the following command:
 
 ```bash
-dtc -@ -O dtb -I dts -i tft22.dts -o tft22.dtbo
+dtc -@ -O dtb -I dts -o tft22.dtbo tft22.dts
 ```
 
 Compile with the following command:
