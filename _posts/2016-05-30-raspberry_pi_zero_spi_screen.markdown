@@ -12,6 +12,9 @@ http://elinux.org has a great piece of documentation on the GPIO pins and their 
 
 **UPDATE 08/21/16**
 I mistakenly listed connecting the LED directly to a GPIO pin.  This will draw too much current and can potentially damage a Raspberry Pi board. There are two ways to overcome this flaw, either put a transistor in place with a connect to the 3.3v rail or just connect it directly to the 3.3v rail with an appropriate sized current limiting resistor.  
+
+**UPDATE 09/09/16**
+After struggling with a second Raspberry Pi Zero and one of these cheap 2.2 inch screens I have discovered that if you hook the Vcc to the 3v3 line then you need to solder the J1 jumper on the back of the board.  If you don't you may only get a white screen.
  
 Connect all the SPI pins on the TFT to the corresponding pins on the Raspberry Pi.  Connect reset to GPIO 23, dc to GPIO 25 and LED to GPIO 24. Connect Vcc to a 3.3V pin and Gnd to a ground pin. 
 
