@@ -17,10 +17,11 @@ twitter_username: dkulinski
 github_username:  dkulinski
 
 # Build settings
-markdown: redcarpet
+markdown: kramdown
+highlighter: rouge
 
-redcarpet:
-   extension:
-     - fenced_code_blocks
- 
-highlighter: pygments
+kramdown:
+  input: GFM
+  syntax_highligher: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
