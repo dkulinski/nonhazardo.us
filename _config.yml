@@ -25,3 +25,5 @@ kramdown:
   syntax_highligher: rouge
   syntax_highlighter_opts:
     css_class: 'highlight'
+    block:
+      line_numbers: true
